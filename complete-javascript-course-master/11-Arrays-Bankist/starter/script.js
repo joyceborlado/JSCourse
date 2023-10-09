@@ -332,7 +332,7 @@ const totalDepositsUSD = movements
   .map((mov, i, arr) => mov * eurToUsd)
   .reduce((acc, mov) => acc + mov, 0);
 
-console.log(totalDepositsUSD);*/
+console.log(totalDepositsUSD);
 
 //// Coding challenge 3
 
@@ -346,4 +346,16 @@ const calcAverageHumanAge = ages =>
     .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
 
 console.log(calcAverageHumanAge(ages));
-console.log(calcAverageHumanAge(ages2));
+console.log(calcAverageHumanAge(ages2));*/
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const firstWithdrawal = movements.find(mov => mov < 0);
+
+console.log(movements);
+console.log(firstWithdrawal);
+
+console.log(accounts);
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
