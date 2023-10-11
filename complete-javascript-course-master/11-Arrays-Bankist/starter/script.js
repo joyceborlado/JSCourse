@@ -195,8 +195,16 @@ btnClose.addEventListener('click', function (e) {
 
     console.log(index);
 
-    // accounts.splice(index, 1);
+    //Delete account
+
+    accounts.splice(index, 1);
+
+    //hide UI
+
+    containerApp.style.opacity = 0;
   }
+
+  inputCloseUsername.value = inputClosePin.value = '';
 });
 
 /////////////////////////////////////////////////
