@@ -227,6 +227,8 @@ btnClose.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 // LECTURES
 
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
 /////////////////////////////////////////////////
 /*let arr = ['a', 'b', 'c', 'd', 'e'];
 
@@ -494,3 +496,18 @@ console.log(arr.flat());
 
 const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
 console.log(arrDeep.flat(2));
+
+//SAMPLE flat
+
+const overallBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance);
+
+// FLATMAP
+
+const overallBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance2);
