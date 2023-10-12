@@ -432,7 +432,7 @@ const calcAverageHumanAge = ages =>
     .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
 
 console.log(calcAverageHumanAge(ages));
-console.log(calcAverageHumanAge(ages2));*/
+console.log(calcAverageHumanAge(ages2));
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
@@ -444,4 +444,18 @@ console.log(firstWithdrawal);
 console.log(accounts);
 
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
-console.log(account);
+console.log(account);*/
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+console.log(movements);
+
+//EQUALITY
+
+console.log(movements.includes(-130));
+
+// CONDITION
+console.log(movements.some(mov => mov === -130));
+
+const anyDeposits = movements.some(mov => mov > 0);
+console.log(anyDeposits);
