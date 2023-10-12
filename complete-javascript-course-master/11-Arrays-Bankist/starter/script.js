@@ -460,7 +460,7 @@ console.log(firstWithdrawal);
 console.log(accounts);
 
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
-console.log(account);*/
+console.log(account);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
@@ -486,4 +486,11 @@ console.log(account4.movements.every(mov => mov > 0));
 const deposit = mov => mov > 0;
 console.log(movements.some(deposit));
 console.log(movements.every(deposit));
-console.log(movements.filter(deposit));
+console.log(movements.filter(deposit));*/
+
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+
+console.log(arr.flat());
+
+const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(arrDeep.flat(2));
