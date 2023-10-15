@@ -522,4 +522,22 @@ console.log(owners); //mutated
 //numbers
 
 console.log(movements);
-console.log(movements.sort());
+//console.log(movements.sort());// will not work, will be converted to strings
+
+// return < 0, A, B (keep order)
+// return > 0, B, A (switch order)
+
+//Ascending
+
+movements.sort((a, b) => {
+  if (a > b) return 1;
+  if (a < b) return -1;
+});
+console.log(movements);
+
+// Descending order
+movements.sort((a, b) => {
+  if (a > b) return -1;
+  if (a < b) return 1;
+});
+console.log(movements);
