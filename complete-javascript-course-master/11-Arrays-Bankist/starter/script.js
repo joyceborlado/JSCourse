@@ -488,7 +488,7 @@ console.log(account4.movements.every(mov => mov > 0));
 const deposit = mov => mov > 0;
 console.log(movements.some(deposit));
 console.log(movements.every(deposit));
-console.log(movements.filter(deposit));*/
+console.log(movements.filter(deposit));
 
 const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
 
@@ -510,4 +510,16 @@ console.log(overallBalance);
 const overallBalance2 = accounts
   .flatMap(acc => acc.movements)
   .reduce((acc, mov) => acc + mov, 0);
-console.log(overallBalance2);
+console.log(overallBalance2);*/
+
+// sorting arrays
+
+const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+
+console.log(owners.sort());
+console.log(owners); //mutated
+
+//numbers
+
+console.log(movements);
+console.log(movements.sort());
