@@ -573,3 +573,16 @@ console.log(x);
 
 arr.fill(23, 2, 6);
 console.log(arr);
+
+//Array.from
+
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z);
+
+const dice = Array.from({ length: 100 }, (_, i) =>
+  Math.trunc(Math.random() * 100)
+);
+console.log(dice);
