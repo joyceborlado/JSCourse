@@ -223,7 +223,8 @@ btnClose.addEventListener('click', function (e) {
     containerApp.style.opacity = 0;
   }
 
-  inputCloseUsername.value = inputClosePin.value = '';
+  inputCloseUsername.value = '';
+  inputClosePin.value = '';
 });
 
 let sorted = false;
@@ -586,3 +587,14 @@ const dice = Array.from({ length: 100 }, (_, i) =>
   Math.trunc(Math.random() * 100)
 );
 console.log(dice);
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements_value'),
+    el => Number(el.textContent.replace('€', ''))
+  );
+
+  console.log(movementsUI);
+
+  const movementsUI2 = [...document.querySelectorAll('.movements_value')];
+});
