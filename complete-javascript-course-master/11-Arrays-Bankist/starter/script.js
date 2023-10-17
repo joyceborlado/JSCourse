@@ -556,8 +556,7 @@ console.log(movements);
 // });
 
 movements.sort((a, b) => b - a);
-console.log(movements);*/
-
+console.log(movements);
 /////// CREATING AND FILLING ARRAYS
 
 const arr = [1, 2, 3, 4, 5, 6, 7];
@@ -597,4 +596,12 @@ labelBalance.addEventListener('click', function () {
   console.log(movementsUI);
 
   const movementsUI2 = [...document.querySelectorAll('.movements_value')];
-});
+});*/
+
+//Arraty exercise 1
+const bankDepsitSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((sum, cur) => sum + cur, 0);
+
+console.log(bankDepsitSum);
