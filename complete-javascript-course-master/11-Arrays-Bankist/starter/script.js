@@ -598,10 +598,26 @@ labelBalance.addEventListener('click', function () {
   const movementsUI2 = [...document.querySelectorAll('.movements_value')];
 });*/
 
-//Arraty exercise 1
+//Array exercise 1
 const bankDepsitSum = accounts
   .flatMap(acc => acc.movements)
   .filter(mov => mov > 0)
   .reduce((sum, cur) => sum + cur, 0);
 
 console.log(bankDepsitSum);
+
+//2
+
+// const numDeposits1000 = accounts
+//   .flatMap(acc => acc.movements)
+//   .filter(mov => mov >= 1000).length;
+
+const numDeposits1000 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count, cur) => (cur >= 1000 ? ++count : count), 0);
+
+console.log(numDeposits1000);
+
+let a = 10;
+console.log(++a);
+console.log(a);
