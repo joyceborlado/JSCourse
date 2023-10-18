@@ -608,3 +608,17 @@ const bankDepositSum = accounts
 console.log(bankDepositSum);
 
 // Array exercise 2
+// const numDeposits1000 = accounts
+//   .flatMap(acc => acc.movements)
+//   .filter(mov => mov > 1000).length;
+
+const numDeposits1000 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count, cur) => (cur >= 1000 ? ++count : count), 0);
+
+console.log(numDeposits1000);
+
+//Prefixed ++ operator
+let a = 10;
+console.log(++a);
+console.log(a);
