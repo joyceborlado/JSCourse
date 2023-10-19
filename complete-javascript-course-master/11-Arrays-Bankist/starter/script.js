@@ -703,8 +703,16 @@ console.log(ownersEatTooLittle);
 // 4
 console.log(`${ownersEatTooMuch.join(' and ')}'s dog eat too much`);
 
-console.log(`${ownersEatTooLittle.join(' and ')}'s dog eat too much`);
+console.log(`${ownersEatTooLittle.join(' and ')}'s dog eat too little`);
 
 // 5
+console.log(dogs.some(dog => SVGFEOffsetElement.curFood === dog.recFood));
 
-console.log(dogs.some(dog => dog.curFood === dog.recFood));
+//6
+console.log(
+  dogs.some(
+    dog => dog.curFood > dog.recFood * 0.9 && dog.curFood < dog.recFood * 1.1
+  )
+);
+
+//7
