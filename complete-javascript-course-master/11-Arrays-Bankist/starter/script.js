@@ -325,7 +325,7 @@ currencies.forEach(function (value, key, map) {
   console.log(`${key}: ${value}`);
 });
 
-//SET
+//SET//////////////////
 const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
 console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, _, set) {
@@ -383,7 +383,7 @@ const movementsDescriptions = movements.map(
 
 console.log(movementsDescriptions);
 
-// filter
+// filter//////////////////
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
@@ -435,7 +435,7 @@ const calcAverageHumanAge = function (ages) {
 console.log(calcAverageHumanAge(ages));
 console.log(calcAverageHumanAge(ages2));
 
-/// chaining methods
+/// chaining methods //////////////
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const eurToUsd = 1.1;
@@ -596,7 +596,7 @@ labelBalance.addEventListener('click', function () {
   console.log(movementsUI);
 
   const movementsUI2 = [...document.querySelectorAll('.movements_value')];
-});*/
+});
 
 //Array exercise 1
 
@@ -661,4 +661,20 @@ console.log(converTitleCase('this is a nice title'));
 
 console.log(converTitleCase('this is a LONG title but not too long'));
 
-console.log(converTitleCase('and here is ANOTHER title with example'));
+console.log(converTitleCase('and here is ANOTHER title with example'));*/
+
+//coding challenge
+
+// TEST DATA
+
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+// // 1
+dogs.forEach(dog => (dog.recFood = Math.trunc(dog.weight ** 0.75 * 28)));
+
+console.log(dogs);
