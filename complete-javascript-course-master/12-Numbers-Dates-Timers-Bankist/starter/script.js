@@ -304,3 +304,12 @@ console.log(Math.max(5, 8, '23', 11, 2)); //23 (does type coercion)
 console.log(Math.max(5, 8, '23px', 11, 2)); // NaN (does not do parsing)
 
 console.log(Math.min(5, 18, 23, 11, 2));
+
+// Random Numbers
+
+console.log(Math.PI * Number.parseFloat('10px') ** 2);
+
+console.log(Math.trunc(Math.random() * 6) + 1);
+
+const randomInt = (min, max) =>
+  Math.trunc(Math.random() * (max - min) + 1) + min;
