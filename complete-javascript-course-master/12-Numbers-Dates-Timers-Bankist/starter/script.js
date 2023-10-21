@@ -252,7 +252,7 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 // LECTURES
 
-console.log(23 === 23.0);
+/*console.log(23 === 23.0);
 
 // Base 10 - 0 to 9.1/10 = 0.1 3/10 = 3.3333333;
 // Binary Base 2 - 0 1
@@ -287,4 +287,13 @@ console.log(Number.isFinite(23 / 0)); //false
 
 console.log(Number.isInteger(23)); //true
 console.log(Number.isInteger(23.0)); //true
-console.log(Number.isInteger(23 / 0)); //false
+console.log(Number.isInteger(23 / 0)); //false*/
+
+//////////////// Math and Rounding ///////////////////////////
+
+// Math square root
+
+console.log(Math.sqrt(25)); // 5
+console.log(25 ** (1 / 2)); // 5
+console.log(8 ** (1 / 3)); // 2
+console.log(Math.sqrt(64)); //8
