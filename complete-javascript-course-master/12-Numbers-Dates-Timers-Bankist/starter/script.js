@@ -297,3 +297,10 @@ console.log(Math.sqrt(25)); // 5
 console.log(25 ** (1 / 2)); // 5
 console.log(8 ** (1 / 3)); // 2
 console.log(Math.sqrt(64)); //8
+
+// Max and min
+console.log(Math.max(5, 8, 23, 11, 2)); //23
+console.log(Math.max(5, 8, '23', 11, 2)); //23 (does type coercion)
+console.log(Math.max(5, 8, '23px', 11, 2)); // NaN (does not do parsing)
+
+console.log(Math.min(5, 18, 23, 11, 2));
