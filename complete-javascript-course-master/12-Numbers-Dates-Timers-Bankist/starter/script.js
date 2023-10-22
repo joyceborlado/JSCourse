@@ -352,3 +352,10 @@ console.log(6 / 2);
 
 console.log(7 % 2);
 console.log(7 / 2);
+
+// function
+
+const isEven = n => n % 2 === 0;
+console.log(isEven(8));
+console.log(isEven(23));
+console.log(isEven(514));
