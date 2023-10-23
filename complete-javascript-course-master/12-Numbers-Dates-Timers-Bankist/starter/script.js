@@ -396,3 +396,29 @@ console.log(2 ** 53 - 1 + 1); // incorrect result
 
 console.log(2358302458050702580580580850820802n); // This is a Big Int
 console.log(BigInt(235830245805)); // not advisable for too large numbers
+
+// Operations
+console.log(1000n + 1000n);
+console.log(114375740253407n + 52340958092869082n);
+
+const huge = 13478901856186830459n;
+const num = 23;
+// console.log(huge * num); // we cannot perform operations with big int and num
+console.log(huge * BigInt(num));
+
+//exceptions:
+
+//logical operations
+
+console.log(20n > 15);
+console.log(20n === 20);
+console.log(typeof 20n);
+
+//string concatenation
+
+console.log(huge + 'is really big!!'); // number is not converted to string
+// console.log(Math.sqrt(16n));
+
+//Divisions
+console.log(10n / 3n); //3
+console.log(10 / 3); //3.333
