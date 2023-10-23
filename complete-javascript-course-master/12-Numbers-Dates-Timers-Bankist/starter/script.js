@@ -371,7 +371,7 @@ labelBalance.addEventListener('click', function () {
     // 0, 3, 6, 9
     if (i % 3 === 0) row.style.backgroundColor = 'blue';
   });
-});*/
+});
 
 ///////// NUMERIC SEPARATORS ///////
 //287,460,000,000
@@ -387,4 +387,12 @@ const transferFee2 = 1_500;
 const PI = 3.1415;
 console.log(PI);
 
-console.log(Number('230000')); // must not have numeric separator
+console.log(Number('230000')); // must not have numeric separator*/
+
+//////// BIG INT //////////////
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(2 ** 53 - 1 + 1); // incorrect result
+
+console.log(2358302458050702580580580850820802n); // This is a Big Int
+console.log(BigInt(235830245805)); // not advisable for too large numbers
