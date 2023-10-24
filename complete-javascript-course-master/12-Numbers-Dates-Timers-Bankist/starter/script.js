@@ -421,7 +421,7 @@ console.log(huge + 'is really big!!'); // number is not converted to string
 
 //Divisions
 console.log(10n / 3n); //3
-console.log(10 / 3); //3.333*/
+console.log(10 / 3); //3.333
 
 // Create a date
 
@@ -436,4 +436,24 @@ console.log(new Date(2037, 10, 19, 15, 23, 5));
 console.log(new Date(2037, 10, 31));
 
 console.log(new Date(0));
-console.log(new Date(3 * 24 * 60 * 60 * 1000));
+console.log(new Date(3 * 24 * 60 * 60 * 1000));*/
+
+// Working with dates
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate());
+console.log(future.getDay());
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getSeconds());
+console.log(future.toISOString());
+console.log(future.getTime());
+
+console.log(new Date(2142228180000));
+
+console.log(Date.now());
+
+future.setFullYear(2040);
+console.log(future);
