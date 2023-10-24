@@ -387,7 +387,7 @@ const transferFee2 = 1_500;
 const PI = 3.1415;
 console.log(PI);
 
-console.log(Number('230000')); // must not have numeric separator*/
+console.log(Number('230000')); // must not have numeric separator
 
 //////// BIG INT //////////////
 console.log(2 ** 53 - 1);
@@ -421,4 +421,19 @@ console.log(huge + 'is really big!!'); // number is not converted to string
 
 //Divisions
 console.log(10n / 3n); //3
-console.log(10 / 3); //3.333
+console.log(10 / 3); //3.333*/
+
+// Create a date
+
+const now = new Date();
+console.log(now);
+
+console.log(new Date('Oct 24 2023 19:36:51'));
+console.log(new Date('December 24, 2015'));
+console.log(new Date(account1.movementsDates[0]));
+
+console.log(new Date(2037, 10, 19, 15, 23, 5));
+console.log(new Date(2037, 10, 31));
+
+console.log(new Date(0));
+console.log(new Date(3 * 24 * 60 * 60 * 1000));
