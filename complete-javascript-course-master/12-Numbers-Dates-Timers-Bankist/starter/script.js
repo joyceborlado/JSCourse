@@ -526,7 +526,7 @@ console.log(new Date(2142228180000));
 console.log(Date.now());
 
 future.setFullYear(2040);
-console.log(future);*/
+console.log(future);
 
 const future = new Date(2037, 10, 19, 15, 13);
 console.log(+future); // in number format
@@ -535,4 +535,17 @@ const calcDaysPassed = (date1, date2) =>
   Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
 
 const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
-console.log(days1);
+console.log(days1);*/
+
+const num = 32958390.45;
+
+console.log('US:      ', new Intl.NumberFormat('en-US').format(num));
+
+console.log('Germany: ', new Intl.NumberFormat('de-DE').format(num));
+
+console.log('Syria:   ', new Intl.NumberFormat('ar-SY').format(num));
+
+console.log(
+  navigator.language,
+  new Intl.NumberFormat(navigator.language).format(num)
+);
