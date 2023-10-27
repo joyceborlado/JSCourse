@@ -545,7 +545,7 @@ const calcDaysPassed = (date1, date2) =>
   Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
 
 const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
-console.log(days1);*/
+console.log(days1);
 
 const num = 32958390.45;
 
@@ -565,4 +565,16 @@ console.log('Syria:   ', new Intl.NumberFormat('ar-SY', options).format(num));
 console.log(
   navigator.language,
   new Intl.NumberFormat(navigator.language).format(num)
+);*/
+
+const ingredients = ['olives', 'spinach'];
+
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2} 🍕`),
+  3000,
+  ...ingredients
 );
+
+console.log('Waiting...');
+
+if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
