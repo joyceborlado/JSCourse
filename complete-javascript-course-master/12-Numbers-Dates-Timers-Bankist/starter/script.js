@@ -565,7 +565,7 @@ console.log('Syria:   ', new Intl.NumberFormat('ar-SY', options).format(num));
 console.log(
   navigator.language,
   new Intl.NumberFormat(navigator.language).format(num)
-);*/
+);
 
 const ingredients = ['olives', 'spinach'];
 
@@ -574,6 +574,9 @@ const pizzaTimer = setTimeout(
   3000,
   ...ingredients
 );
+
+
+//// CHAR LANG  /////
 
 console.log('Waiting...');
 
@@ -605,4 +608,15 @@ var x = setInterval(function () {
     clearInterval(x);
     document.getElementById('demo').innerHTML = 'EXPIRED';
   }
-}, 1000);
+}, 1000);*/
+//==========================================
+//////////Set timeout /////////////////////////////////
+
+setTimeout(code);
+setTimeout(code, delay);
+
+setTimeout(functionRef);
+setTimeout(functionRef, delay);
+setTimeout(functionRef, delay, param1);
+setTimeout(functionRef, delay, param1, param2);
+setTimeout(functionRef, delay, param1, param2, /* …, */ paramN);
