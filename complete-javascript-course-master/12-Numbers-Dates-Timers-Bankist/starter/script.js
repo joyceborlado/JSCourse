@@ -620,3 +620,18 @@ setTimeout(functionRef, delay);
 setTimeout(functionRef, delay, param1);
 setTimeout(functionRef, delay, param1, param2);
 setTimeout(functionRef, delay, param1, param2, /* …, */ paramN);
+
+//Obsolete. Never USE!
+setTimeout(() => {
+  console.log('Delayed for 1 second.');
+}, '1000');
+
+setTimeout(() => {
+  console.log('Delayed for 1 second.');
+}, '1 second');
+
+// USe this instead
+
+setTimeout(() => {
+  console.log('Delayed for 1 second.');
+}, 1000);
