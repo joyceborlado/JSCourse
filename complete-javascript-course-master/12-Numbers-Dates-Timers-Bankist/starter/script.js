@@ -605,3 +605,10 @@ const pizzaTimer = setTimeout(
 console.log('Waiting.....');
 
 if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
+
+//=========== SET INTERVAL ====================
+
+setInterval(function () {
+  const now = new Date();
+  console.log(now);
+}, 1000);
