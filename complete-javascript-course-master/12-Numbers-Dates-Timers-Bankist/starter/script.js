@@ -634,7 +634,7 @@ setTimeout(() => {
 
 setTimeout(() => {
   console.log('Delayed for 1 second.');
-}, 1000);*/
+}, 1000);
 
 const ingredients = ['olives', 'spinach'];
 const pizzaTimer = setTimeout(
@@ -652,4 +652,25 @@ if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
 setInterval(function () {
   const now = new Date();
   console.log(now);
-}, 1000);
+}, 1000);*/
+
+// Countdown timer two minutes
+// Set the target time for the countdown (2 minutes in milliseconds)
+const targetTime = 2 * 60 * 1000; // 2 minutes in milliseconds
+let timeRemaining = targetTime;
+
+function updateTimer() {
+    const minutes = Math.floor(timeRemaining / 60000);
+    const seconds = Math.floor((timeRemaining % 60000) / 1000);
+
+    document.getElementById('timer').textContent = `${minutes} minutes ${seconds} seconds`;
+
+    if (timeRemaining <= 0) {
+        document.getElementById('timer').textContent = 'Time's up!';
+    } else {
+        timeRemaining -= 1000; // Subtract 1 second
+        setTimeout(updateTimer, 1000); // Update the timer every second
+    }
+}
+
+updateTimer(); // Start the countdown
