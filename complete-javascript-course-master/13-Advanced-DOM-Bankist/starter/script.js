@@ -41,8 +41,7 @@ console.log(document.body);
 const header = document.querySelector('.header');
 const allSections = document.querySelectorAll('.section');
 console.log(allSections);
-
-document.getElementById('section--1');
++document.getElementById('section--1');
 const allButtons = document.getElementsByTagName('button');
 console.log(allButtons);
 
@@ -69,3 +68,18 @@ document
   .addEventListener('click', function () {
     message.remove();
   });
+
+// Styles
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+console.log(message.style.height);
+console.log(message.style.backgroundColor);
+
+console.log(getComputedStyle(message).color);
+console.log(getComputedStyle(message).height);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+
+// document.documentElement.style.setProperty('--color-primary', 'orangered');
