@@ -49,24 +49,68 @@ If you want to access any element in an HTML page, you always start with accessi
 
 Below are some examples of how you can use the document object to access and manipulate HTML.
 
-Finding HTML Elements
+///////////Finding HTML Elements////////////////
 Method
 document.getElementById(id)	=> Find an element by element id
 document.getElementsByTagName(name)	=> Find elements by tag name
 document.getElementsByClassName(name) => Find elements by class name
 
 
-Changing HTML Elements
+////////////Changing HTML Elements////////////////
 Property	Description
 element.innerHTML =  new html content	Change the inner HTML of an element
 element.attribute = new value	Change the attribute value of an HTML element
 element.style.property = new style	Change the style of an HTML element
 Method	Description
 element.setAttribute(attribute, value)	Change the attribute value of an HTML element
-Adding and Deleting Elements
+
+
+/////////////////Adding and Deleting Elements////////
 Method	Description
 document.createElement(element)	Create an HTML element
 document.removeChild(element)	Remove an HTML element
 document.appendChild(element)	Add an HTML element
 document.replaceChild(new, old)	Replace an HTML element
 document.write(text)	Write into the HTML output stream
+
+
+============Finding HTML Elements==============
+Often, with JavaScript, you want to manipulate HTML elements.
+
+To do so, you have to find the elements first. There are several ways to do this:
+
+Finding HTML elements by id
+Finding HTML elements by tag name
+Finding HTML elements by class name
+Finding HTML elements by CSS selectors
+Finding HTML elements by HTML object collections
+
+
+Example:
+const element = document.getElementById("intro");
+const element = document.getElementsByTagName("p");
+const x = document.getElementById("main");
+const y = x.getElementsByTagName("p");
+const x = document.getElementsByClassName("intro");
+const x = document.querySelectorAll("p.intro");
+
+const x = document.forms["frm1"];
+let text = "";
+for (let i = 0; i < x.length; i++) {
+  text += x.elements[i].value + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+
+
+The following HTML objects (and object collections) are also accessible:
+
+document.anchors
+document.body
+document.documentElement
+document.embeds
+document.forms
+document.head
+document.images
+document.links
+document.scripts
+document.title
