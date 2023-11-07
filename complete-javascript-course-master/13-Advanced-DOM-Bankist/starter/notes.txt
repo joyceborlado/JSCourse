@@ -126,3 +126,35 @@ Margin around the root. Can have values similar to the CSS margin property, e.g.
 
 threshold
 Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. If you only want to detect when visibility passes the 50% mark, you can use a value of 0.5. If you want the callback to run every time visibility passes another 25%, you would specify the array [0, 0.25, 0.5, 0.75, 1]. The default is 0 (meaning as soon as even one pixel is visible, the callback will be run). A value of 1.0 means that the threshold isn't considered passed until every pixel is visible.
+
+Targeting an element to be observed
+let target = document.querySelector("#listItem");
+observer.observe(target);
+
+// the callback we setup for the observer will be executed now for the first time
+// it waits until we assign a target to our observer (even if the target is currently not visible)
+
+Whenever the target meets a threshold specified for the IntersectionObserver, the callback is invoked. The callback receives a list of IntersectionObserverEntry objects and the observer:
+
+let callback = (entries, observer) => {
+  entries.forEach((entry) => {
+    // Each entry describes an intersection change for one observed
+    // target element:
+    //   entry.boundingClientRect
+    //   entry.intersectionRatio
+    //   entry.intersectionRect
+    //   entry.isIntersecting
+    //   entry.rootBounds
+    //   entry.target
+    //   entry.time
+  });
+};
+
+
+Interfaces
+IntersectionObserver
+The primary interface for the Intersection Observer API. Provides methods for creating and managing an observer which can watch any number of target elements for the same intersection configuration. Each observer can asynchronously observe changes in the intersection between one or more target elements and a shared ancestor element or with their top-level Document's viewport. The ancestor or viewport is referred to as the root.
+
+IntersectionObserverEntry
+Describes the intersection between the target element and its root container at a specific moment of transition. Objects of this type can only be obtained in two ways: as an input to your IntersectionObserver callback, or by calling IntersectionObserver.takeRecords().
+
