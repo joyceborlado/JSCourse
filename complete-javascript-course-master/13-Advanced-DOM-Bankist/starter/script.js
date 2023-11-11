@@ -274,6 +274,13 @@ btnRight.addEventListener('click', nextSlide);
 // Previous slide
 btnLeft.addEventListener('click', prevSlide);
 
+///// Left and right arrow
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'ArrowLeft') prevSlide();
+  e.key === 'ArrowRight' && nextSlide();
+});
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // SELECTING ELEMENTS
