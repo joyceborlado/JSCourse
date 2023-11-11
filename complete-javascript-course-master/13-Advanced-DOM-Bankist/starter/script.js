@@ -268,7 +268,7 @@ activateDot(0);
 
 const goToSlide = function (slide) {
   slides.forEach(
-    (s, i) => (s.style.transform = `translateX(${100 * (i - curSlide)}%)`)
+    (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
   );
 };
 goToSlide(0);
@@ -311,7 +311,6 @@ dotContainer.addEventListener('click', function (e) {
   if (e.target.classList.contains('dots__dot')) {
     const { slide } = e.target.dataset;
     goToSlide(slide);
-    console.log(slide);
     activateDot(slide);
   }
 });
