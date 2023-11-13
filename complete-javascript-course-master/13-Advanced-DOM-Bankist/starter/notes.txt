@@ -354,3 +354,11 @@ function showSlides(n, no) {
   }
   x[slideIndex[no]-1].style.display = "block";
 }
+
+
+/////// Async and defer
+
+Notes
+Scripts without async, defer or type="module" attributes, as well as inline scripts without the type="module" attribute, are fetched and executed immediately before the browser continues to parse the page.
+
+The script should be served with the text/javascript MIME type, but browsers are lenient and only block them if the script is served with an image type (image/*), a video type (video/*), an audio type (audio/*), or text/csv. If the script is blocked, an error event is sent to the element; otherwise, a load event is sent.
