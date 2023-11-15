@@ -1,69 +1,124 @@
-Object-oriented programming
+//////////// LECTURE ///////////////
+FOUR FUNDAMENTAL OOP PRINCIPLES
 
-Object-oriented programming (OOP) is a programming paradigm fundamental to many programming languages, including Java and C++. In this article, we'll provide an overview of the basic concepts of OOP. We'll describe three main concepts: classes and instances, inheritance, and encapsulation. For now, we'll describe these concepts without reference to JavaScript in particular, so all the examples are given in pseudocode.
+1.  ABSTRACTION
 
-Object-oriented programming is about modeling a system as a collection of objects, where each object represents some particular aspect of the system. Objects contain both functions (or methods) and data. An object provides a public interface to other code that wants to use it but maintains its own private, internal state; other parts of the system don't have to care about what is going on inside the object.
+Phone {
+charge
+volume
 
-Classes and instances
-When we model a problem in terms of objects in OOP, we create abstract definitions representing the types of objects we want to have in our system. For example, if we were modeling a school, we might want to have objects representing professors. Every professor has some properties in common: they all have a name and a subject that they teach. Additionally, every professor can do certain things: they can all grade a paper and they can introduce themselves to their students at the start of the year, for example.
+    homeBtn() {}
+    volumeBtn() {}
+    screen() {}
 
-So Professor could be a class in our system. The definition of the class lists the data and methods that every professor has.
+}
 
-In pseudocode, a Professor class could be written like this:
+hiding details that don't matter
 
-class Professor
-properties
-name
-teaches
-methods
-grade(paper)
-introduceSelf()
+2.  ENCAPSULATION
+    -keeping properties and methods private inside the class so they are not accessible outside the class
 
-        This defines a Professor class with:
+    Hypothetical code:
 
-two data properties: name and teaches
-two methods: grade() to grade a paper and introduceSelf() to introduce themselves.
+    User {
+    user
+    private password
+    private email
 
-walsh = new Professor("Walsh", "Psychology");
-lillian = new Professor("Lillian", "Poetry");
+        login(word) {
+            this.password === word
+        }
 
-walsh.teaches; // 'Psychology'
-walsh.introduceSelf(); // 'My name is Professor Walsh and I will be your Psychology professor.'
+        comment(text) {
+            this.checkSPAM(text)
+        }
 
-lillian.teaches; // 'Poetry'
-lillian.introduceSelf(); // 'My name is Professor Lillian and I will be your Poetry professor.'
+        private checkSPAM(text) {
+             //Verify logic
+        }
 
-Inheritance
-class Student
-properties
-name
-year
-constructor
-Student(name, year)
-methods
-introduceSelf()
+    }
 
-        class Person
-    properties
-        name
-    constructor
-        Person(name)
-    methods
-        introduceSelf()
+3.  Inheritance - making all propertiles and methods of a certain class available to a child class
 
-class Professor : extends Person
-properties
-teaches
-constructor
-Professor(name, teaches)
-methods
-grade(paper)
-introduceSelf()
+    Parent class
+    User {
+    user
+    password
+    email
 
-class Student : extends Person
-properties
-year
-constructor
-Student(name, year)
-methods
-introduceSelf()
+        login(password){
+            //log in logic
+        }
+        sendMessage(str) {
+            //sending logic
+        }
+
+    }
+
+    Child class
+    Admin {
+    user
+    password
+    email
+    permissions
+
+        login(password){
+            //log in logic
+        }
+        sendMessage(str) {
+            //sending logic
+        }
+
+        deleteUser(user) {
+            //deleting logic
+        }
+
+    }
+
+4.  Polymorphism - a child class can overwrite a method it inherited from a parent class
+
+Admin {
+user
+password
+email
+permissions
+
+    login(password){
+        //different login
+    }
+
+    deleteUser(user) {
+        //deleting logic
+    }
+
+}
+
+User {
+user
+password
+email
+
+        login(password){
+            //log in logic
+        }
+        sendMessage(str) {
+            //sending logic
+        }
+    }
+
+Author {
+user
+password
+email
+posts
+
+    login(password){
+        // more different
+    }
+
+    writePost(){
+        //writing logic
+    }
+
+}
