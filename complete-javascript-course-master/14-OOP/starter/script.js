@@ -31,9 +31,11 @@ hiding details that don't matter
         }
 
         comment(text) {
-            this.checkSPAM(text) {
-                //Verify logic
-            }
+            this.checkSPAM(text)
+        }
+
+        private checkSPAM(text) {
+             //Verify logic
         }
     }
  
