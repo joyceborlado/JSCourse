@@ -38,5 +38,44 @@ hiding details that don't matter
              //Verify logic
         }
     }
+
+3. Inheritance - making all propertiles and methods of a certain class available to a child class
+
+    Parent class
+    User {
+        user
+        password
+        email
+
+        login(password){
+            //log in logic
+        }
+        sendMessage(str) {
+            //sending logic
+        }
+    } 
+
+    Child class
+    Admin {
+        user
+        password
+        email
+        permissions
+
+        login(password){
+            //log in logic
+        }
+        sendMessage(str) {
+            //sending logic
+        }
+
+        deleteUser(user) {
+            //deleting logic
+        }
+    }
+
+
+
+
  
 */
