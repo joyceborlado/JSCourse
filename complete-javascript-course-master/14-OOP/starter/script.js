@@ -74,6 +74,52 @@ hiding details that don't matter
         }
     }
 
+4. Polymorphism - a child class can overwrite a method it inherited from a parent class 
+
+Admin {
+    user
+    password
+    email
+    permissions
+
+    login(password){
+        //different login
+    }
+    
+    deleteUser(user) {
+        //deleting logic
+    }
+
+}
+
+User {
+        user
+        password
+        email
+
+        login(password){
+            //log in logic
+        }
+        sendMessage(str) {
+            //sending logic
+        }
+    } 
+
+Author {
+    user
+    password
+    email
+    posts
+
+
+    login(password){
+        // more different
+    }
+
+    writePost(){
+        //writing logic
+    }
+}
 
 
 
