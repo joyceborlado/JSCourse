@@ -52,3 +52,13 @@ console.log(jonas.species, matilda.species);
 
 console.log(jonas.hasOwnProperty('firstName'));
 console.log(jonas.hasOwnProperty('species'));
+
+// Prototypal inheritance
+
+console.log(jonas.__proto__);
+// Object.prototype (top of prototype chain)
+
+console.log(jonas.__proto__.__proto__);
+console.log(jonas.__proto__.__proto__.__proto__); //null
+
+console.dir(Person.prototype.constructor);
