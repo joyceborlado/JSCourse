@@ -150,3 +150,8 @@ const jessica = new PersonCl('Jessica', 1996);
 console.log(jessica);
 jessica.calcAge();
 jessica.greet();
+
+/////////// Note ///////////////
+// 1. Classes are NOT hoisted
+// 2. Class are first class citizens
+// 3. Classes are executed in strict mode
