@@ -2,7 +2,7 @@
 
 // constructor function
 
-const Person = function (firstName, birthYear) {
+/*const Person = function (firstName, birthYear) {
   // Instance Properties
   this.firstName = firstName;
   this.birthYear = birthYear;
@@ -93,7 +93,7 @@ console.dir(x => x + 1);
 DATA CAR 1: 'BMW' going at 120 km/h
 DATA CAR 2: 'Mercedes' going at 95 km/h
 */
-
+/*
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
@@ -119,3 +119,34 @@ BMW.accelerate();
 BMW.brake();
 mercedes.accelerate();
 mercedes.brake();
+
+*/
+
+///// ES6 classes
+
+//class expression
+// class PersonCl = class {
+//   // code
+// }
+
+//class declaration
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  //Methods will be added to .prototype property
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+
+  greet() {
+    console.log(`Hey ${this.firstName}`);
+  }
+}
+
+const jessica = new PersonCl('Jessica', 1996);
+console.log(jessica);
+jessica.calcAge();
+jessica.greet();
