@@ -93,3 +93,19 @@ console.dir(x => x + 1);
 DATA CAR 1: 'BMW' going at 120 km/h
 DATA CAR 2: 'Mercedes' going at 95 km/h
 */
+
+const Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
+
+const BMW = new Car('BMW', 120);
+const mercedes = new Car('Mercedes', 95);
+// console.log(BMW, mercedes);
+
+Car.prototype.accelerate = function () {
+  console.log(this.speed * 10);
+};
+
+BMW.accelerate();
+mercedes.accelerate();
