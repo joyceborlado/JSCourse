@@ -156,3 +156,38 @@ console.log(instance.msg); // "hello world"
 
 instance.msg = "cake";
 console.log(instance.msg); // "hello cake"
+
+set
+The set syntax binds an object property to a function to be called when there is an attempt to set that property. It can also be used in classes.
+
+const language = {
+set current(name) {
+this.log.push(name);
+},
+log: [],
+};
+
+language.current = 'EN';
+language.current = 'FA';
+
+console.log(language.log);
+// Expected output: Array ["EN", "FA"]
+
+Using setters in classes
+You can use the exact same syntax to define public instance setters that are available on class instances. In classes, you don't need the comma separator between methods.
+
+class ClassWithGetSet {
+#msg = "hello world";
+get msg() {
+return this.#msg;
+}
+set msg(x) {
+this.#msg = `hello ${x}`;
+}
+}
+
+const instance = new ClassWithGetSet();
+console.log(instance.msg); // "hello world"
+
+instance.msg = "cake";
+console.log(instance.msg); // "hello cake"
