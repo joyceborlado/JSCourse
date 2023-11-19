@@ -122,3 +122,37 @@ posts
     }
 
 }
+
+///////////// Getters and setters ES6 classes ////////
+
+get
+The get syntax binds an object property to a function that will be called when that property is looked up. It can also be used in classes.
+
+const obj = {
+log: ['a', 'b', 'c'],
+get latest() {
+return this.log[this.log.length - 1];
+},
+};
+
+console.log(obj.latest);
+// Expected output: "c"
+
+Using getters in classes
+You can use the exact same syntax to define public instance getters that are available on class instances. In classes, you don't need the comma separator between methods.
+
+class ClassWithGetSet {
+#msg = "hello world";
+get msg() {
+return this.#msg;
+}
+set msg(x) {
+this.#msg = `hello ${x}`;
+}
+}
+
+const instance = new ClassWithGetSet();
+console.log(instance.msg); // "hello world"
+
+instance.msg = "cake";
+console.log(instance.msg); // "hello cake"
