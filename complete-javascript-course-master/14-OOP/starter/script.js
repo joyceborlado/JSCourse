@@ -261,14 +261,8 @@ class CarCl {
   }
 }
 
-const BMW = new CarCl('BMW', 120);
-const mercedes = new CarCl('Mercedes', 95);
-// console.log(BMW, mercedes);
-
-BMW.accelerate();
-BMW.accelerate();
-BMW.accelerate();
-BMW.brake();
-mercedes.accelerate();
-mercedes.brake();
-console.log(BMW.speed);
+const ford = new CarCl('Ford', 120);
+console.log(ford.speedUS);
+ford.accelerate();
+ford.accelerate();
+ford.brake();
