@@ -240,24 +240,30 @@ sarah.calcAge();*/
 DATA CAR 1: 'Ford' going at 120 km/h
 
 */
-const Car = function (make, speed) {
-  this.make = make;
-  this.speed = speed;
-};
+class CarCl {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
 
-const BMW = new Car('BMW', 120);
-const mercedes = new Car('Mercedes', 95);
+  accelerate() {
+    this.speed += 10;
+    console.log(`${this.make} is going at ${this.speed}km/h`);
+  }
+
+  brake() {
+    this.speed -= 5;
+    console.log(`${this.make} is going at ${this.speed}km/h`);
+  }
+
+  get speedUS() {
+    return this.speed / 1.6;
+  }
+}
+
+const BMW = new CarCl('BMW', 120);
+const mercedes = new CarCl('Mercedes', 95);
 // console.log(BMW, mercedes);
-
-Car.prototype.accelerate = function () {
-  this.speed += 10;
-  console.log(`${this.make} is going at ${this.speed}km/h`);
-};
-
-Car.prototype.brake = function () {
-  this.speed -= 5;
-  console.log(`${this.make} is going at ${this.speed}km/h`);
-};
 
 BMW.accelerate();
 BMW.accelerate();
@@ -265,3 +271,4 @@ BMW.accelerate();
 BMW.brake();
 mercedes.accelerate();
 mercedes.brake();
+console.log(BMW.speed);
