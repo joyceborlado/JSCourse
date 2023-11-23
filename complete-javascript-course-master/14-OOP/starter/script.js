@@ -368,7 +368,7 @@ Tesla.accelerate();
 Tesla.brake();
 Tesla.accelerate();
 Tesla.chargeBattery(90);
-Tesla.accelerate();*/
+Tesla.accelerate();
 
 //////////////////////////////////////////
 // Inheritance between Classes: ES6 Classes
@@ -435,4 +435,20 @@ class StudentCl extends PersonCl {
 
 const martha = new StudentCl('Martha Jones', 2012, 'Computer Science');
 martha.introduce();
-martha.calcAge();
+martha.calcAge();*/
+
+//////////////////////////////////////////
+// Inheritance between "classes": object.create
+
+const PersonProto = {
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
