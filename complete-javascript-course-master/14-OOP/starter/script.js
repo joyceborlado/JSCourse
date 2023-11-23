@@ -327,7 +327,7 @@ console.dir(Student.prototype.constructor);*/
 DATA CAR 1: 'Tesla' going at 120km/h, with a charge of 23%
 
 
-*/
+
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
@@ -368,4 +368,7 @@ Tesla.accelerate();
 Tesla.brake();
 Tesla.accelerate();
 Tesla.chargeBattery(90);
-Tesla.accelerate();
+Tesla.accelerate();*/
+
+//////////////////////////////////////////
+// Inheritance between Classes: ES6 Classes
