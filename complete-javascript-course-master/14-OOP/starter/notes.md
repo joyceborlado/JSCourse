@@ -260,3 +260,15 @@ child.value = 4; // assign the value 4 to the property 'value' on child.
 console.log(child.method()); // 5
 // Since child now has the 'value' property, 'this.value' means
 // child.value instead
+
+const boxPrototype = {
+getValue() {
+return this.value;
+},
+};
+
+const boxes = [
+{ value: 1, __proto__: boxPrototype },
+{ value: 2, __proto__: boxPrototype },
+{ value: 3, __proto__: boxPrototype },
+];
