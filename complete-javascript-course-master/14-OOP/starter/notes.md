@@ -295,3 +295,12 @@ specialization) {
 }
 console.log(Employee.prototype);
 console.log(Developer.prototype);
+
+// Output
+Object
+constructor: ƒ Employee(name, age, gender, id)
+[[Prototype]]: Object
+
+Object
+constructor: ƒ Developer(name, age, gender, id, specialization)
+[[Prototype]]: Object
