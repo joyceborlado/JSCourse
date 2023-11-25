@@ -304,3 +304,28 @@ constructor: ƒ Employee(name, age, gender, id)
 Object
 constructor: ƒ Developer(name, age, gender, id, specialization)
 [[Prototype]]: Object
+
+/// Example 2
+function Employee(name, age, gender, id) {
+this.name = name;
+this.age = age;
+this.gender = gender;
+this.id = id;
+};
+
+function Developer(name, age, gender, id, specialization) {
+
+    // Calling Employee constructor function
+    Employee.call(this, name, age, gender, id);
+
+    // Adding a new parameter
+    this.specialization = specialization;
+
+}
+
+// Creating objects
+let Employee1 = new Employee("Suraj", 28, "Male", 564);
+let Developer1 = new Developer("Karishma", 31, "Female", 345,
+"Frontend Developer");
+console.log(Employee1);
+console.log(Developer1);
