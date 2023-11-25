@@ -329,3 +329,20 @@ let Developer1 = new Developer("Karishma", 31, "Female", 345,
 "Frontend Developer");
 console.log(Employee1);
 console.log(Developer1);
+
+//// Example 2 Output
+Employee {name: 'Suraj', age: 28, gender: 'Male', id: 564}
+age: 28
+gender: "Male"
+id: 564
+name: "Suraj"
+[[Prototype]]: Object
+
+Developer {name: 'Karishma', age: 31, gender: 'Female', id: 345,
+specialization: 'Frontend Developer'}
+age: 31
+gender: "Female"
+id: 345
+name: "Karishma"
+specialization: "Frontend Developer"
+[[Prototype]]: Object
