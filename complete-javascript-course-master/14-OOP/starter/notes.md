@@ -272,3 +272,26 @@ const boxes = [
 { value: 2, __proto__: boxPrototype },
 { value: 3, __proto__: boxPrototype },
 ];
+
+//////////////////////////////////////////////////////
+Linking classes example
+
+function Employee(name, age, gender, id) {
+this.name = name;
+this.age = age;
+this.gender = gender;
+this.id = id;
+};
+
+function Developer(name, age, gender, id,  
+specialization) {
+
+    // Calling Employee constructor function
+    Employee.call(this, name, age, gender, id);
+
+    // Adding a new parameter
+    this.specialization = specialization;
+
+}
+console.log(Employee.prototype);
+console.log(Developer.prototype);
