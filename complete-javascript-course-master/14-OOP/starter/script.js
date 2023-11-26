@@ -483,7 +483,20 @@ class Account {
 
     console.log(`Thanks for opening an account , ${owner}`);
   }
+
+  // Public Interface
+  deposit(val) {
+    this.movements.push(val);
+  }
+
+  withdraw(val) {
+    this.deposit(-val);
+  }
 }
 
 const acc1 = new Account('Jonas', 'EUR', 1111);
+
+acc1.deposit(250);
+acc1.withdraw(140);
+
 console.log(acc1);
