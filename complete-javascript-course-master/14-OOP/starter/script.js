@@ -435,7 +435,7 @@ class StudentCl extends PersonCl {
 
 const martha = new StudentCl('Martha Jones', 2012, 'Computer Science');
 martha.introduce();
-martha.calcAge();*/
+martha.calcAge();
 
 //////////////////////////////////////////
 // Inheritance between "classes": object.create
@@ -468,4 +468,22 @@ const jay = Object.create(StudentProto);
 jay.init('Jay', 2010, 'Computer Science');
 
 jay.introduce();
-jay.calcAge();
+jay.calcAge();*/
+
+///////////////////////////////////////////////////////////
+// Another class example
+
+class Account {
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    this.pin = pin;
+    this.movements = [];
+    this.locale = navigator.language;
+
+    console.log(`Thanks for opening an account , ${owner}`);
+  }
+}
+
+const acc1 = new Account('Jonas', 'EUR', 1111);
+console.log(acc1);
