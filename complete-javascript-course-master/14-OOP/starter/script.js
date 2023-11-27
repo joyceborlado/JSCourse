@@ -473,10 +473,11 @@ jay.calcAge();*/
 ///////////////////////////////////////////////////////////
 // Another class example
 
-// Public fields
-// Private Fields
-// Public Methods
-// Private Methods
+// 1) Public fields
+// 2) Private Fields
+// 3) Public Methods
+// 4) Private Methods
+// (there is also the static version)
 
 class Account {
   // 1) Public Fields
@@ -497,6 +498,7 @@ class Account {
     console.log(`Thanks for opening an account , ${owner}`);
   }
 
+  // 3) Public methods
   // Public Interface
   getMovements() {
     return this.#movements;
@@ -510,15 +512,20 @@ class Account {
     this.deposit(-val);
   }
 
-  _approveLoan(val) {
-    return true;
-  }
-
   requestLoan(val) {
-    if (this._approveLoan(val)) {
+    if (this.#approveLoan(val)) {
       this.deposit(val);
       console.log(`Loan approved`);
     }
+  }
+
+  // static helper() {
+  //   console.log(helper);
+  // }
+
+  // 4) Private methods
+  #approveLoan(val) {
+    return true;
   }
 }
 
@@ -527,7 +534,7 @@ const acc1 = new Account('Jonas', 'EUR', 1111);
 acc1.deposit(250);
 acc1.withdraw(140);
 acc1.requestLoan(1000);
-acc1._approveLoan(1000);
+// acc1.#approveLoan(1000);
 console.log(acc1.getMovements());
 
 console.log(acc1);
