@@ -550,3 +550,19 @@ console.log(acc1);
 
 acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
 console.log(acc1.getMovements());
+
+// Summary
+class Student extends Person {
+  university = 'University of Lisbon';
+  #studyHours = 0;
+  #course;
+  static numSubjects = 10;
+
+  constructor(fullName, birthYear, startYear, course) {
+    super(fullName, birthYear);
+
+    this.startYear = startYear;
+
+    this.#course = course;
+  }
+}
