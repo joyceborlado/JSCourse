@@ -594,3 +594,28 @@ class Student extends Person {
 }
 
 const student = new Student('Jonas', 2020, 2037, 'Medicine');
+
+// More examples
+
+// Parent class (Base class)
+function Animal(name) {
+  this.name = name;
+}
+
+Animal.prototype.speak = function () {
+  throw new Error('Subclasses must implement this method');
+};
+
+// Child class (Derived class)
+function Dog(name) {
+  Animal.call(this, name);
+}
+
+// Set up inheritance
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+// Override the speak method in the Dog class
+Dog.prototype.speak = function () {
+  return this.name + ' says Woof!';
+};
