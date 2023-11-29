@@ -619,3 +619,17 @@ Dog.prototype.constructor = Dog;
 Dog.prototype.speak = function () {
   return this.name + ' says Woof!';
 };
+
+// Another child class
+function Cat(name) {
+  Animal.call(this, name);
+}
+
+// Set up inheritance for Cat
+Cat.prototype = Object.create(Animal.prototype);
+Cat.prototype.constructor = Cat;
+
+// Override the speak method in the Cat class
+Cat.prototype.speak = function () {
+  return this.name + ' says Meow!';
+};
