@@ -633,3 +633,10 @@ Cat.prototype.constructor = Cat;
 Cat.prototype.speak = function () {
   return this.name + ' says Meow!';
 };
+
+// Example usage
+var dog = new Dog('Buddy');
+var cat = new Cat('Whiskers');
+
+console.log(dog.speak()); // Output: Buddy says Woof!
+console.log(cat.speak()); // Output: Whiskers says Meow!
