@@ -40,3 +40,23 @@ maxZoom: 19,
 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 Make sure all the code is called after the div and leaflet.js inclusion. That’s it! You have a working Leaflet map now.
+
+Markers, circles, and polygons
+Besides tile layers, you can easily add other things to your map, including markers, polylines, polygons, circles, and popups. Let’s add a marker:
+
+var marker = L.marker([51.5, -0.09]).addTo(map);
+Adding a circle is the same (except for specifying the radius in meters as a second argument), but lets you control how it looks by passing options as the last argument when creating the object:
+
+var circle = L.circle([51.508, -0.11], {
+color: 'red',
+fillColor: '#f03',
+fillOpacity: 0.5,
+radius: 500
+}).addTo(map);
+Adding a polygon is as easy:
+
+var polygon = L.polygon([
+[51.509, -0.08],
+[51.503, -0.06],
+[51.51, -0.047]
+]).addTo(map);
