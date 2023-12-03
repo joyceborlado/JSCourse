@@ -60,3 +60,20 @@ var polygon = L.polygon([
 [51.503, -0.06],
 [51.51, -0.047]
 ]).addTo(map);
+
+Working with popups
+
+Popups are usually used when you want to attach some information to a particular object on a map. Leaflet has a very handy shortcut for this:
+
+marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+circle.bindPopup("I am a circle.");
+polygon.bindPopup("I am a polygon.");
+Try clicking on our objects. The bindPopup method attaches a popup with the specified HTML content to your marker so the popup appears when you click on the object, and the openPopup method (for markers only) immediately opens the attached popup.
+
+You can also use popups as layers (when you need something more than attaching a popup to an object):
+
+var popup = L.popup()
+.setLatLng([51.513, -0.09])
+.setContent("I am a standalone popup.")
+.openOn(map);
+Here we use openOn instead of addTo because it handles automatic closing of a previously opened popup when opening a new one which is good for usability.
