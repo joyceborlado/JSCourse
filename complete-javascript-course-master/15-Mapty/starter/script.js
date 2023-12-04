@@ -29,16 +29,11 @@ if (navigator.geolocation)
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(map);
 
-      
-
       map.on('click', function (mapEvent) {
         console.log(mapEvent);
-        const 
+        const { lat, lng } = mapEvent.latlng;
 
-        L.marker(coords)
-        .addTo(map)
-        .bindPopup('A pretty CSS popup.<br> Easily customizable.')
-        .openPopup();
+        L.marker([lat, lng]).addTo(map).bindPopup('Workout.').openPopup();
       });
     },
     function () {
