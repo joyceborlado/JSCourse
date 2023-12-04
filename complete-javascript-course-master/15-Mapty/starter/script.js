@@ -29,10 +29,17 @@ if (navigator.geolocation)
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(map);
 
-      L.marker(coords)
+      
+
+      map.on('click', function (mapEvent) {
+        console.log(mapEvent);
+        const 
+
+        L.marker(coords)
         .addTo(map)
         .bindPopup('A pretty CSS popup.<br> Easily customizable.')
         .openPopup();
+      });
     },
     function () {
       alert('Could not get your position');
