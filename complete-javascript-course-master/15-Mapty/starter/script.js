@@ -17,7 +17,9 @@ let map, mapEvent;
 
 // Refactoring
 class App {
-  constructor() {}
+  constructor() {
+    this._getPosition();
+  }
 
   _getPosition() {
     if (navigator.geolocation)
@@ -54,6 +56,9 @@ class App {
 
   _newWorkout() {}
 }
+
+const app = new App();
+app._getPosition();
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
