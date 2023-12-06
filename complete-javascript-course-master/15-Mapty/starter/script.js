@@ -19,7 +19,35 @@ let map, mapEvent;
 class App {
   constructor() {}
 
-  _getPosition() {}
+  _getPosition() {
+    if (navigator.geolocation)
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          const { latitude } = position.coords;
+          const { longitude } = position.coords;
+          console.log(`https://www.google.com/maps/@${latitude},${longitude}`);
+
+          const coords = [latitude, longitude];
+
+          map = L.map('map').setView(coords, 13);
+
+          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution:
+              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          }).addTo(map);
+
+          // handling clicks on map
+          map.on('click', function (mapE) {
+            mapEvent = mapE;
+            form.classList.remove('hidden');
+            inputDistance.focus();
+          });
+        },
+        function () {
+          alert('Could not get your position');
+        }
+      );
+  }
 
   _loadMap() {}
 
@@ -29,34 +57,6 @@ class App {
 
   _newWorkout() {}
 }
-
-if (navigator.geolocation)
-  navigator.geolocation.getCurrentPosition(
-    function (position) {
-      const { latitude } = position.coords;
-      const { longitude } = position.coords;
-      console.log(`https://www.google.com/maps/@${latitude},${longitude}`);
-
-      const coords = [latitude, longitude];
-
-      map = L.map('map').setView(coords, 13);
-
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }).addTo(map);
-
-      // handling clicks on map
-      map.on('click', function (mapE) {
-        mapEvent = mapE;
-        form.classList.remove('hidden');
-        inputDistance.focus();
-      });
-    },
-    function () {
-      alert('Could not get your position');
-    }
-  );
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
