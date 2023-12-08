@@ -77,3 +77,26 @@ var popup = L.popup()
 .setContent("I am a standalone popup.")
 .openOn(map);
 Here we use openOn instead of addTo because it handles automatic closing of a previously opened popup when opening a new one which is good for usability.
+
+// object oriented programming
+
+Constructor functions and prototypes
+// Constructor Function
+function Car(make, model, year) {
+this.make = make;
+this.model = model;
+this.year = year;
+}
+
+// Prototype method
+Car.prototype.displayInfo = function () {
+console.log(`${this.year} ${this.make} ${this.model}`);
+};
+
+// Creating instances
+let car1 = new Car('Toyota', 'Camry', 2022);
+let car2 = new Car('Honda', 'Civic', 2023);
+
+// Using prototype method
+car1.displayInfo();
+car2.displayInfo();
