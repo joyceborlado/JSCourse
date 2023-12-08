@@ -121,3 +121,51 @@ let car2 = new Car('Honda', 'Civic', 2023);
 // Using prototype method
 car1.displayInfo();
 car2.displayInfo();
+
+Encapsulation and inheritance
+// Base class
+class Shape {
+constructor(color) {
+this.color = color;
+}
+
+// Method to get the area (to be overridden by subclasses)
+getArea() {
+return 0;
+}
+}
+
+// Subclass extending Shape
+class Circle extends Shape {
+constructor(color, radius) {
+super(color);
+this.radius = radius;
+}
+
+// Override the getArea method
+getArea() {
+return Math.PI \* Math.pow(this.radius, 2);
+}
+}
+
+// Subclass extending Shape
+class Rectangle extends Shape {
+constructor(color, width, height) {
+super(color);
+this.width = width;
+this.height = height;
+}
+
+// Override the getArea method
+getArea() {
+return this.width \* this.height;
+}
+}
+
+// Create instances of the subclasses
+const redCircle = new Circle('Red', 5);
+const blueRectangle = new Rectangle('Blue', 4, 6);
+
+// Access properties and call methods
+console.log(`Circle Area: ${redCircle.getArea()}`);
+console.log(`Rectangle Area: ${blueRectangle.getArea()}`);
