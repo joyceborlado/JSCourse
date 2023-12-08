@@ -100,3 +100,24 @@ let car2 = new Car('Honda', 'Civic', 2023);
 // Using prototype method
 car1.displayInfo();
 car2.displayInfo();
+
+ES6 Classes
+// Constructor Function
+function Car(make, model, year) {
+this.make = make;
+this.model = model;
+this.year = year;
+}
+
+// Prototype method
+Car.prototype.displayInfo = function () {
+console.log(`${this.year} ${this.make} ${this.model}`);
+};
+
+// Creating instances
+let car1 = new Car('Toyota', 'Camry', 2022);
+let car2 = new Car('Honda', 'Civic', 2023);
+
+// Using prototype method
+car1.displayInfo();
+car2.displayInfo();
