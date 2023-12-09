@@ -3,13 +3,7 @@
 // prettier-ignore
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-const form = document.querySelector('.form');
-const containerWorkouts = document.querySelector('.workouts');
-const inputType = document.querySelector('.form__input--type');
-const inputDistance = document.querySelector('.form__input--distance');
-const inputDuration = document.querySelector('.form__input--duration');
-const inputCadence = document.querySelector('.form__input--cadence');
-const inputElevation = document.querySelector('.form__input--elevation');
+
 
 // Geolocation
 
@@ -60,6 +54,14 @@ class Cycling extends Workout {
 
 //////////////////////////////////////////////////////////////////////
 // Application architecture
+
+const form = document.querySelector('.form');
+const containerWorkouts = document.querySelector('.workouts');
+const inputType = document.querySelector('.form__input--type');
+const inputDistance = document.querySelector('.form__input--distance');
+const inputDuration = document.querySelector('.form__input--duration');
+const inputCadence = document.querySelector('.form__input--cadence');
+const inputElevation = document.querySelector('.form__input--elevation');
 
 class App {
   #map;
@@ -117,6 +119,9 @@ class App {
     e.preventDefault();
 
     // get data from form
+    const type = inputType.value;
+    const distance = +inputDistance.value;
+    const duration = +inputDuration.value;
 
     // check if data is valid
 
@@ -127,19 +132,6 @@ class App {
     // add new object to workout array
 
     // render workout on map as marker
-
-    // render workout on list
-
-    // hide form + clear input fields
-
-    //clear input fields
-    inputDistance.value =
-      inputDuration.value =
-      inputCadence.value =
-      inputElevation.value =
-        '';
-
-    // Display marker
 
     const { lat, lng } = this.#mapEvent.latlng;
 
@@ -157,6 +149,18 @@ class App {
       .setPopupContent('Workout')
       .openPopup();
   }
+
+
+// render workout on list
+
+// hide form + clear input fields
+
+//clear input fields
+inputDistance.value =
+  inputDuration.value =
+  inputCadence.value =
+  inputElevation.value =
+    '';
 }
 
 const app = new App();
