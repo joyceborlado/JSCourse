@@ -17,7 +17,7 @@ let map, mapEvent;
 
 class Workout {
   date = new Date();
-  id = (new Date() + '').slice(-10);
+  id = (Date.now() + '').slice(-10);
 
   constructor(coords, distance, duration) {
     this.coords = coords; // [lat, lng]
@@ -54,9 +54,9 @@ class Cycling extends Workout {
   }
 }
 
-const run1 = new Running([39, -12], 5.2, 24, 178);
-const cycling1 = new Running([39, -12], 27, 95, 523);
-console.log(run1, cycling1);
+// const run1 = new Running([39, -12], 5.2, 24, 178);
+// const cycling1 = new Running([39, -12], 27, 95, 523);
+// console.log(run1, cycling1);
 
 //////////////////////////////////////////////////////////////////////
 // Application architecture
@@ -115,6 +115,22 @@ class App {
 
   _newWorkout(e) {
     e.preventDefault();
+
+    // get data from form
+
+    // check if data is valid
+
+    // if workout === running, create running object
+
+    // if workout === cycling, create cycling object
+
+    // add new object to workout array
+
+    // render workout on map as marker
+
+    // render workout on list
+
+    // hide form + clear input fields
 
     //clear input fields
     inputDistance.value =
