@@ -192,3 +192,36 @@ console.log(`Rectangle Area: ${blueRectangle.getArea()}`);
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Storage Example 2</title>
+</head>
+<body>
+
+<script>
+  // Creating an object to store in local storage
+  const user = {
+    name: 'John Doe',
+    age: 25,
+    email: 'john@example.com'
+  };
+
+  // Stringifying and storing the object in local storage
+  localStorage.setItem('userObject', JSON.stringify(user));
+
+  // Retrieving the stringified object from local storage
+  const retrievedObject = localStorage.getItem('userObject');
+
+  // Parsing the stringified object back to a JavaScript object
+  const parsedObject = JSON.parse(retrievedObject);
+
+  // Displaying the parsed object
+  console.log(parsedObject);
+</script>
+
+</body>
+</html>
