@@ -169,3 +169,26 @@ const blueRectangle = new Rectangle('Blue', 4, 6);
 // Access properties and call methods
 console.log(`Circle Area: ${redCircle.getArea()}`);
 console.log(`Rectangle Area: ${blueRectangle.getArea()}`);
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Storage Example 1</title>
+</head>
+<body>
+
+<script>
+  // Storing a value in local storage
+  localStorage.setItem('myKey', 'Hello, Local Storage!');
+
+  // Retrieving a value from local storage
+  const retrievedValue = localStorage.getItem('myKey');
+
+  // Displaying the retrieved value
+  alert(retrievedValue);
+</script>
+
+</body>
+</html>
