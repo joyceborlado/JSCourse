@@ -225,3 +225,40 @@ console.log(`Rectangle Area: ${blueRectangle.getArea()}`);
 
 </body>
 </html>
+
+// handling local storage events
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Storage Example 3</title>
+</head>
+<body>
+
+<script>
+  // Setting a value in local storage
+  localStorage.setItem('counter', '0');
+
+  // Function to update and display the counter
+  function updateCounter() {
+    const counterValue = parseInt(localStorage.getItem('counter')) + 1;
+    localStorage.setItem('counter', counterValue.toString());
+    alert(`Counter: ${counterValue}`);
+  }
+
+  // Adding an event listener for local storage changes
+  window.addEventListener('storage', function (event) {
+    if (event.key === 'counter') {
+      // Counter value changed in another tab or window
+      updateCounter();
+    }
+  });
+
+  // Initial display of the counter value
+  updateCounter();
+</script>
+
+</body>
+</html>
