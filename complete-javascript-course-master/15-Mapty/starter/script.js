@@ -198,7 +198,8 @@ class App {
     // hide form + clear input fields
     this._hideForm();
 
-    //clear input fields
+    // Set local storage to all workouts
+    this._setLocalStorage();
   }
   _renderWorkoutMarker(workout) {
     L.marker(workout.coords)
