@@ -262,3 +262,12 @@ console.log(`Rectangle Area: ${blueRectangle.getArea()}`);
 
 </body>
 </html>
+
+/////////////////////////
+In JavaScript, you can reset local storage by using the localStorage.clear() method. This method clears all key-value pairs from the local storage associated with the current domain. Here's an example:
+// Clear all key-value pairs from local storage
+localStorage.clear();
+
+// Optionally, you can also remove specific items by their key
+// For example, if you want to remove an item with key 'exampleKey'
+// localStorage.removeItem('exampleKey');
