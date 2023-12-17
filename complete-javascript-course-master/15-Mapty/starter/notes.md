@@ -271,3 +271,10 @@ localStorage.clear();
 // Optionally, you can also remove specific items by their key
 // For example, if you want to remove an item with key 'exampleKey'
 // localStorage.removeItem('exampleKey');
+
+To set a value in the local storage using JavaScript, you can use the localStorage.setItem() method. Here's an example:
+// Set a key-value pair in local storage
+localStorage.setItem('exampleKey', 'exampleValue');
+
+// You can also set multiple key-value pairs
+localStorage.setItem('anotherKey', 'anotherValue');
