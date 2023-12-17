@@ -278,3 +278,8 @@ localStorage.setItem('exampleKey', 'exampleValue');
 
 // You can also set multiple key-value pairs
 localStorage.setItem('anotherKey', 'anotherValue');
+
+To retrieve the value later, you can use the localStorage.getItem() method:
+// Retrieve the value for a specific key
+var value = localStorage.getItem('exampleKey');
+console.log(value); // Outputs: 'exampleValue'
