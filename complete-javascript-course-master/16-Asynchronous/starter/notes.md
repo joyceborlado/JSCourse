@@ -13,4 +13,7 @@ AJAX- Asynchronous Javascript and XML
 - allows us to communicate with remote web servers in an asynchronous way
 
 API- application programming interface
-piece of software that can be used by another piece of software in order to allo;w applications to talk to each other
+piece of software that can be used by another piece of software in order to allow applications to talk to each other
+
+XML data foramt = not used anymore
+JSON Data format = most popular
