@@ -20,7 +20,7 @@ request.addEventListener('load', function () {
             <h4 class="country__region">${data.region}</h4>
             <p class="country__row"><span>👫</span>${(
               +data.population / 1000000
-            ).toFixed(1)}</p>
+            ).toFixed(1)}M people</p>
             <p class="country__row"><span>🗣️</span>${data.languages[0].name}</p>
             <p class="country__row"><span>💰</span>${
               data.currencies[0].name
@@ -28,4 +28,6 @@ request.addEventListener('load', function () {
         </div>
     </article>
   `;
+  countriesContainer.insertAdjacentHTML('beforeend', html);
+  countriesContainer.style.opacity = 1;
 });
