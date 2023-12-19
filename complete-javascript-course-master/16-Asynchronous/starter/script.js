@@ -36,3 +36,4 @@ const getCountryData = function (country) {
 
 getCountryData('portugal');
 getCountryData('usa');
+getCountryData('philippines');
