@@ -73,7 +73,7 @@ const getCountryAndNeighbour = function (country) {
     renderCountry(data);
 
     //get neighbour country (2)
-    const [neighbour] = data.borders;
+    const neighbour = data.borders?.[0];
 
     if (!neighbour) return;
 
@@ -92,4 +92,4 @@ const getCountryAndNeighbour = function (country) {
 };
 
 // getCountryAndNeighbour('portugal');
-getCountryAndNeighbour('usa');
+getCountryAndNeighbour('philippines');
