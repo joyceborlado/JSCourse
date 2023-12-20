@@ -36,7 +36,7 @@ const countriesContainer = document.querySelector('.countries');
 
 getCountryData('portugal');
 getCountryData('usa');
-getCountryData('philippines');*/
+getCountryData('philippines');
 
 const renderCountry = function (data, className = '') {
   const html = `
@@ -92,4 +92,13 @@ const getCountryAndNeighbour = function (country) {
 };
 
 // getCountryAndNeighbour('portugal');
-getCountryAndNeighbour('philippines');
+getCountryAndNeighbour('philippines');*/
+
+//////////////////////////////////////////
+// const request = new XMLHttpRequest(); // old school way
+//   request.open('GET', `https://restcountries.com/v2/name/${country}`);
+//   request.send();
+
+// Promise
+const request = fetch('https://restcountries.com/v2/name/portugal');
+console.log(request);
