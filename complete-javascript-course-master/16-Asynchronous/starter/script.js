@@ -60,6 +60,7 @@ const renderCountry = function (data) {
 };
 
 const getCountryAndNeighbour = function (country) {
+  // AJAx call country 1
   const request = new XMLHttpRequest(); // old school way
   request.open('GET', `https://restcountries.com/v2/name/${country}`);
   request.send();
@@ -67,7 +68,23 @@ const getCountryAndNeighbour = function (country) {
   request.addEventListener('load', function () {
     const [data] = JSON.parse(this.responseText);
     console.log(data);
+
+    //render country 1
     renderCountry(data);
+
+    //get neighbour country (2)
+    const [neighbour] = data.borders;
+
+    if (!neighbour) return;
+
+    // AJAX Call country 2
+    const request2 = new XMLHttpRequest(); // old school way
+    request2.open('GET', `https://restcountries.com/v2/alpha/${neighbour}`);
+    request2.send();
+
+    request2.addEventListener('load', function () {
+      console.log(this.responseText);
+    });
   });
 };
 
