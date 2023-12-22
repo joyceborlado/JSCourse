@@ -17,3 +17,17 @@ piece of software that can be used by another piece of software in order to allo
 
 XML data foramt = not used anymore
 JSON Data format = most popular
+
+//////////////////
+using promises
+
+A Promise is an object representing the eventual completion or failure of an asynchronous operation.
+function successCallback(result) {
+console.log(`Audio file ready at URL: ${result}`);
+}
+
+function failureCallback(error) {
+console.error(`Error generating audio file: ${error}`);
+}
+
+createAudioFileAsync(audioSettings, successCallback, failureCallback);
