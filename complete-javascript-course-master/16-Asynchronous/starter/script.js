@@ -21,12 +21,12 @@ const renderCountry = function (data, className = '') {
     </article>
   `;
   countriesContainer.insertAdjacentHTML('beforeend', html);
-  countriesContainer.style.opacity = 1;
+  // countriesContainer.style.opacity = 1;
 };
 
 const renderError = function (msg) {
   countriesContainer.insertAdjacentText('beforeend', msg);
-  countriesContainer.style.opacity = 1;
+  // countriesContainer.style.opacity = 1;
 };
 
 ///////////////////////////////////////
@@ -130,6 +130,10 @@ const getCountryData = function (country) {
     .then(data => renderCountry(data, 'neighbour'))
     .catch(err => {
       console.log(`${err} boom`);
+      renderError(`Somethign went wrong ${err.message}. Try again!`);
+    })
+    .finally(() => {
+      countriesContainer.style.opacity = 1;
     });
 };
 
