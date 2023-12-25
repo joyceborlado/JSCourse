@@ -116,7 +116,10 @@ getCountryAndNeighbour('philippines');*/
 const getCountryData = function (country) {
   // Country 1
   fetch(`https://restcountries.com/v2/name/${country}`)
-    .then(response => response.json())
+    .then(response => {
+      console.log(response);
+      return response.json();
+    })
     .then(data => {
       renderCountry(data[0]);
       const neighbour = data[0].borders[0];
