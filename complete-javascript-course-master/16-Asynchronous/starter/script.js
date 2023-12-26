@@ -130,7 +130,7 @@ const getCountryData = function (country) {
     .then(data => renderCountry(data, 'neighbour'))
     .catch(err => {
       console.log(`${err} boom`);
-      renderError(`Somethign went wrong ${err.message}. Try again!`);
+      renderError(`Something went wrong ${err.message}. Try again!`);
     })
     .finally(() => {
       countriesContainer.style.opacity = 1;
@@ -140,3 +140,5 @@ const getCountryData = function (country) {
 btn.addEventListener('click', function () {
   getCountryData('portugal');
 });
+
+getCountryData('hfgkhlf');
