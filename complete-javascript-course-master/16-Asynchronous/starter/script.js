@@ -114,7 +114,7 @@ getCountryAndNeighbour('philippines');*/
 // };
 
 const getJSON = function (url, errorMsg = 'Something went wrong') {
-  fetch(url).then(response => {
+  return fetch(url).then(response => {
     if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
 
     return response.json();
@@ -123,15 +123,7 @@ const getJSON = function (url, errorMsg = 'Something went wrong') {
 
 const getCountryData = function (country) {
   // Country 1
-  fetch(`https://restcountries.com/v2/name/${country}`)
-    .then(response => {
-      console.log(response);
-
-      if (!response.ok)
-        throw new Error(`Country not found (${response.status})`);
-
-      return response.json();
-    })
+  getJSON(`https://restcountries.com/v2/name/${country}`, 'Country not found')
     .then(data => {
       renderCountry(data[0]);
       const neighbour = data[0].borders[0];
@@ -139,9 +131,11 @@ const getCountryData = function (country) {
       if (!neighbour) return;
 
       // Country 2
-      return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
+      return getJSON(
+        `https://restcountries.com/v2/alpha/${neighbour}`,
+        'Country not found'
+      );
     })
-    .then(response => response.json())
     .then(data => renderCountry(data, 'neighbour'))
     .catch(err => {
       console.log(`${err} boom`);
