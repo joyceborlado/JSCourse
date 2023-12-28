@@ -151,3 +151,14 @@ btn.addEventListener('click', function () {
 });
 
 getCountryData('Philippines');
+
+/// Coding challenge
+/*
+
+Part I.
+1. Create a function 'whereAmI" which takes as inputs a latituder value (lat) and a longitude value (lng) (these are gps coordinates, examples are below)
+
+
+
+
+*/
