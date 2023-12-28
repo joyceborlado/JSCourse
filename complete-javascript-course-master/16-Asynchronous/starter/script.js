@@ -157,7 +157,7 @@ getCountryData('Philippines');
 
 Part I.
 1. Create a function 'whereAmI" which takes as inputs a latituder value (lat) and a longitude value (lng) (these are gps coordinates, examples are below)
-
+2. Do 'reverse geocoding' of the provided coordinates. reverse geocoding means to convert coordinates to a meaningful location, like a city and country name. Use this API to do reverse geocoding: https://geocode.xyz/api
 
 
 
