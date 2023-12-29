@@ -159,6 +159,7 @@ Part I.
 1. Create a function 'whereAmI" which takes as inputs a latituder value (lat) and a longitude value (lng) (these are gps coordinates, examples are below)
 2. Do 'reverse geocoding' of the provided coordinates. reverse geocoding means to convert coordinates to a meaningful location, like a city and country name. Use this API to do reverse geocoding: https://geocode.xyz/api.
 The AJAX call will be done to a URL with this format: https://geocode.xyz/52.508,13.381?geoit=json. Use the fetch API and promises to get the data. Do NOT use the getJSON function we created, that is cheating
+3. Once you have the data, take a look at it in the console to see all the attributes that you received about the provided location. Then, using this data, log a message like this to the console: 'You are in Berlin, Germany'
 
 
 
