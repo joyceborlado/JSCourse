@@ -163,6 +163,9 @@ The AJAX call will be done to a URL with this format: https://geocode.xyz/52.508
 4. Chain a .catch method to the end of the promise chain and log errors to the console.
 5. This API allows you to make only 3 requests per second. If you reload fast, you will get this error with code 403. This is an error with the request. Remember, fetch() does not reject the promise in this case. So create an error to reject the promise yourself, with meaningful error message
 
+PART 2
+6. Now it's time to use the received data to render a country. So take the relevant attribute from the geocode API result, and plug it into the countries API that we have been using
+
 
 
 */
