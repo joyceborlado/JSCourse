@@ -165,7 +165,7 @@ The AJAX call will be done to a URL with this format: https://geocode.xyz/52.508
 
 PART 2
 6. Now it's time to use the received data to render a country. So take the relevant attribute from the geocode API result, and plug it into the countries API that we have been using
-
+7. Render the country and catch any errors, just like what we have done in the last code
 
 
 */
