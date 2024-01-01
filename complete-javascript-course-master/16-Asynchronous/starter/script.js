@@ -175,13 +175,38 @@ TEST COORDINATES 2: -33.933, 18.474
 
 const whereAmI = function (lat, lng) {
   fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
-    .then(res => res.json())
+    .then(res => {
+      console.log(res);
+      res.json();
+    })
     .then(data => {
       console.log(data);
-      console.log(`You are in ${data.city}, ${data.country}`);
+      // console.log(`You are in ${data.city}, ${data.country}`);
     });
 };
 
 whereAmI(52.508, 13.381);
 whereAmI(19.037, 72.873);
 whereAmI(-33.933, 18.474);
+
+/* Error:
+
+{
+	"distance": "Throttled! See geocode.xyz/pricing",
+	"elevation": "Throttled! See geocode.xyz/pricing",
+	"latt": "Throttled! See geocode.xyz/pricing",
+	"city": "Throttled! See geocode.xyz/pricing",
+	"prov": "Throttled! See geocode.xyz/pricing",
+	"geocode": "Throttled! See geocode.xyz/pricing",
+	"stnumber": "Throttled! See geocode.xyz/pricing",
+	"staddress": "Throttled! See geocode.xyz/pricing",
+	"geonumber": "Throttled! See geocode.xyz/pricing",
+	"inlatt": "Throttled! See geocode.xyz/pricing",
+	"timezone": "Throttled! See geocode.xyz/pricing",
+	"region": "Throttled! See geocode.xyz/pricing",
+	"postal": "Throttled! See geocode.xyz/pricing",
+	"longt": "Throttled! See geocode.xyz/pricing",
+	"inlongt": "Throttled! See geocode.xyz/pricing",
+	"altgeocode": "Throttled! See geocode.xyz/pricing"
+}
+*/
