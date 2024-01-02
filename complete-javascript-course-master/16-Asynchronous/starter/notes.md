@@ -84,3 +84,13 @@ const obj = JSON.parse(text);
 document.getElementById("demo").innerHTML =
 obj.employees[1].firstName + " " + obj.employees[1].lastName;
 </script>
+
+// Asynchronous behind the scenes
+
+JS engine - heart of the runtime
+Heap - where object are stored in memory
+JS Runtime in the browser - container which includes all the pieces necessary to execute javascript code
+Call stack - where code is actually executed. Only one thread of execution, no multitasking
+WEB APIs - APIs provided to the engine
+event loop - sends callbacks from queue to call stack
+callback queue - ready to be executed callback functions (coming from events)
