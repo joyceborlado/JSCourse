@@ -21,12 +21,12 @@ const renderCountry = function (data, className = '') {
     </article>
   `;
   countriesContainer.insertAdjacentHTML('beforeend', html);
-  // countriesContainer.style.opacity = 1;
+  countriesContainer.style.opacity = 1;
 };
 
 const renderError = function (msg) {
   countriesContainer.insertAdjacentText('beforeend', msg);
-  // countriesContainer.style.opacity = 1;
+  countriesContainer.style.opacity = 1;
 };
 
 ///////////////////////////////////////
@@ -171,7 +171,7 @@ TEST COORDINATES 1: 52.508, 13.381 (Latitude, Longitude)
 TEST COORDINATES 2: 19.037, 72.873
 TEST COORDINATES 2: -33.933, 18.474
 
-*/
+
 
 // const whereAmI = function (lat, lng) {
 //   fetch(`https://geocode.xyz/41.3189957000,2.0746469000?json=1`)
@@ -224,4 +224,9 @@ whereAmI(52.508, 13.381);
 
 whereAmI(52.508, 13.381);
 whereAmI(19.037, 72.873);
-whereAmI(-33.933, 18.474);
+whereAmI(-33.933, 18.474);*/
+
+console.log('Test start');
+setTimeout(() => console.log('0 sec timer'), 0);
+Promise.resolve('Resolved promise 1').then(res => console.log(res));
+console.log('Test end');
