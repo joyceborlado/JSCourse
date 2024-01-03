@@ -256,9 +256,27 @@ const wait = function (seconds) {
   });
 };
 
-wait(2)
+// wait(2)
+//   .then(() => {
+//     console.log('I wailted for 2 seconds');
+//     return wait(1);
+//   })
+//   .then(() => console.log('I wailted for 1 second'));
+
+wait(1)
   .then(() => {
-    console.log('I wailted for 2 seconds');
+    console.log('1 second passed');
     return wait(1);
   })
-  .then(() => console.log('I wailted for 1 second'));
+  .then(() => {
+    console.log('2 seconds passed');
+    return wait(1);
+  })
+  .then(() => {
+    console.log('3 seconds passed');
+    return wait(1);
+  })
+  .then(() => {
+    console.log('4 seconds passed');
+    return wait(1);
+  });
