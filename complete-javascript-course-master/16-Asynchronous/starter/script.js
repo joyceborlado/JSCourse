@@ -294,4 +294,39 @@ const getPosition = function () {
   });
 };
 
-getPosition().then(pos => console.log(pos));
+// getPosition().then(pos => console.log(pos));
+
+const whereAmI = function (lat, lng) {
+  getPosition().then(pos => {
+    const { latitude: lat, longitude: lng } = pos.coords;
+
+    return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(
+            `Error with status ${response.status}: ${response.statusText}`
+          );
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        const city = data.city || 'Unknown City';
+        const country = data.country || 'Unknown Country';
+
+        console.log(`You are in ${city}, ${country}`);
+
+        return fetch(`https://restcountries.com/v2/name/${country}`);
+      })
+      .then(response => {
+        if (!response.ok)
+          throw new Error(`Country not found(${response.status})`);
+
+        return response.json();
+      })
+      .then(data => renderCountry(data[0]))
+      .catch(err => console.error(`${err.message} 💥`));
+  });
+};
+
+btn.addEventListener('click', whereAmI);
