@@ -286,9 +286,12 @@ Promise.reject(new Error('Problem!')).catch(x => console.error(x));*/
 
 const getPosition = function () {
   return new Promise(function (resolve, reject) {
-    navigator.geolocation.getCurrentPosition(
-      position => console.log(position),
-      err => console.error(err)
-    );
+    // navigator.geolocation.getCurrentPosition(
+    //   position => console.log(position),
+    //   err => console.error(err)
+
+    navigator.geolocation.getCurrentPosition(resolve, reject);
   });
 };
+
+getPosition().then(pos => console.log(pos));
