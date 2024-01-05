@@ -282,8 +282,7 @@ wait(1)
   });
 
 Promise.resolve('abc').then(x => console.log(x));
-Promise.reject(new Error('Problem!')).catch(x => console.error(x));*/
-
+Promise.reject(new Error('Problem!')).catch(x => console.error(x));
 const getPosition = function () {
   return new Promise(function (resolve, reject) {
     // navigator.geolocation.getCurrentPosition(
@@ -329,4 +328,13 @@ const whereAmI = function (lat, lng) {
   });
 };
 
-btn.addEventListener('click', whereAmI);
+btn.addEventListener('click', whereAmI);*/
+
+/* Coding challenge 2
+
+Part 1
+1. Create a function 'createImage' which receives imgPath as input. This function returns a promise which creates a new image (use document.createElement ('img)) and sets the .src attribute to the provided image path. When the image is done loading, append it to the DOM element with the 'images' class, and resolve the promise. The fulfilled value should be the image element itself. In case there is an error loading the image ('error' event), reject the promise.
+
+
+
+*/
