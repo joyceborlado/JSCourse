@@ -344,3 +344,21 @@ Part 2.
 
 TEST DATA: Images in the img folder. Test the error handling by passing a wrong image path. Set the network speed to 'Fast 3G' in the dev tools network tab, otherwise images load too fast.
 */
+
+const imgContainer = document.querySelector('.images');
+
+const createImage = function (imgPath) {
+  return new Promise(function (resolve, reject) {
+    const img = document.createElement('img');
+    img.src = imgPath;
+
+    img.addEventListener('load', function () {
+      imgContainer.append(img);
+      resolve(img);
+    });
+
+    img.addEventListener('error', function () {
+      reject(new Error('Image not found'));
+    });
+  });
+};
