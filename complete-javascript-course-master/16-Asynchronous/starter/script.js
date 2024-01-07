@@ -398,7 +398,7 @@ const getPosition = function () {
   });
 };
 
-const whereAmI = async function (country) {
+const whereAmI = async function () {
   // Geolocation
   const pos = await getPosition();
   const { latitude: lat, longitude: lng } = pos.coords;
@@ -406,15 +406,17 @@ const whereAmI = async function (country) {
   // Reverse geocoding
   const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
   const dataGeo = await resGeo.json();
+  console.log(dataGeo);
 
   // Country data
-  //fetch(`https://restcountries.com/v2/name/${country}`).then(res => console.log(res))
 
-  const res = await fetch(`https://restcountries.com/v2/name/${country}`);
+  const res = await fetch(
+    `https://restcountries.com/v2/name/${dataGeo.country}`
+  );
   const data = await res.json();
   console.log(data);
   renderCountry(data[0]);
 };
 
-whereAmI('philippines');
+whereAmI();
 console.log('FIRST');
