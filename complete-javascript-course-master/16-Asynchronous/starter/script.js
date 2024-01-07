@@ -343,7 +343,7 @@ Part 2.
 6. After the 2 seconds have passed, hide the current image.
 
 TEST DATA: Images in the img folder. Test the error handling by passing a wrong image path. Set the network speed to 'Fast 3G' in the dev tools network tab, otherwise images load too fast.
-*/
+
 
 const imgContainer = document.querySelector('.images');
 const wait = function (seconds) {
@@ -388,4 +388,15 @@ createImage('img/img-1.jpg')
   .then(() => {
     currentImg.style.display = 'none';
   })
-  .catch(err => console.error(err));
+  .catch(err => console.error(err));*/
+
+/////////////// Async await ////////////////////////
+const whereAmI = async function (country) {
+  //fetch(`https://restcountries.com/v2/name/${country}`).then(res => console.log(res))
+
+  const res = await fetch(`https://restcountries.com/v2/name/${country}`);
+  console.log(res);
+};
+
+whereAmI('portugal');
+console.log('FIRST');
