@@ -391,12 +391,30 @@ createImage('img/img-1.jpg')
   .catch(err => console.error(err));*/
 
 /////////////// Async await ////////////////////////
+
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
 const whereAmI = async function (country) {
+  // Geolocation
+  const pos = await getPosition();
+  const { latitude: lat, longitude: lng } = pos.coords;
+
+  // Reverse geocoding
+  const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+  const dataGeo = await resGeo.json();
+
+  // Country data
   //fetch(`https://restcountries.com/v2/name/${country}`).then(res => console.log(res))
 
   const res = await fetch(`https://restcountries.com/v2/name/${country}`);
-  console.log(res);
+  const data = await res.json();
+  console.log(data);
+  renderCountry(data[0]);
 };
 
-whereAmI('portugal');
+whereAmI('philippines');
 console.log('FIRST');
